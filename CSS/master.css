@@ -1,0 +1,192 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+
+}
+
+body {
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+/* Grid System */
+@media (min-width: 576px) {
+
+    /* Small Devices => Landscape Phones */
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Desktops */
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* Large Screens */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+.landing>img {
+    position: absolute;
+    bottom: 0;
+}
+
+.landing .card {
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.landing .card .txt {
+    position: relative;
+    left: 100px;
+    z-index: 5;
+}
+
+.landing .card .txt>img {
+    position: absolute;
+    left: 10%;
+    top: -20px;
+}
+
+.landing .card .txt p {
+    font-weight: 300;
+    color: var(--Dark-Blue);
+}
+
+.landing .card .txt .info {
+    font-size: 18px;
+}
+
+.landing .card .txt .info .name {
+    color: var(--Dark-Blue);
+    font-weight: 700;
+}
+
+.landing .card .txt .info .job {
+    color: var(--Grayish-Blue);
+}
+
+.landing .card .image {
+    position: relative;
+}
+
+.landing .card .image .bg {
+    position: absolute;
+    top: -55px;
+    left: -15%;
+    z-index: -1;
+}
+
+.landing .card .image .hero {
+    border-radius: 10px;
+    box-shadow: 0 6px 20px 5px var(--Grayish-Blue);
+}
+
+.landing .card .image .btn {
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    padding: 15px 20px;
+    position: relative;
+    top: -25px;
+    left: 50px;
+    box-shadow: 0 15px 15px 0px var(--Grayish-Blue);
+}
+
+.landing .card .image .btn img:nth-child(1) {
+    cursor: pointer;
+}
+
+.landing .card .image .btn img:nth-child(2) {
+    cursor: pointer;
+}
+
+
+@media (max-width: 575px) {
+    .landing .card {
+        padding: 0;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 0 20px;
+        gap: 50px;
+    }
+
+    .landing .card .image .hero {
+        width: 90%;
+    }
+
+    .landing .card .image .bg {
+        left: 50%;
+        top: -25px;
+        width: 110%;
+        transform: translateX(-50%);
+    }
+
+    .landing .card .image .btn,
+    .landing .card .txt>img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .landing .card .txt>img {
+        width: 20%;
+    }
+
+    .landing .card .txt {
+        left: initial;
+    }
+
+    .landing .card .txt .info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 15px;
+    }
+
+    .landing>img {
+        width: 100%;
+    }
+
+    .landing .card .txt p {
+        font-size: 20px;
+    }
+
+}
